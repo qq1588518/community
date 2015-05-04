@@ -1,0 +1,97 @@
+<!DOCTYPE>
+<html>
+	<head>
+		<title>海棠湾</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href="../css/mobile/common.css" rel="stylesheet" type="text/css"/>
+		<link href="../css/mobile/index.css" rel="stylesheet" type="text/css"/>
+		<script type="text/javascript" src="js/jquery-1.8.0.min.js"></script>
+		<script type="text/javascript" src="js/jquery.event.drag-1.5.min.js"></script>
+		<script type="text/javascript" src="js/jquery.touchSlider.js"></script>
+		<script type="text/javascript">
+			$(function(){
+				var counter=0;
+				var timer=setInterval(function(){
+					$(".banner_yd li").eq((counter%6)).click();
+					counter=(counter%6)+1;
+				},5000);
+				$(".raiders_banner").hover(function(){
+					clearInterval(timer);
+				},function(){
+					timer=setInterval(function(){
+						$(".banner_yd li").eq((counter%6)).click();
+						counter=(counter%6)+1;
+					},5000);
+				});
+				$(".banner_yd li").each(function(){
+					$(this).click(function(){
+						counter=$(this).index();
+					});
+				});
+				$("div .main_image").touchSlider({
+					flexible:true,
+					speed:200,
+					delay:5000,
+					mouseTouch:true,
+					autoplay:true,
+        			autoplay: true,
+        			paging : $(".banner_yd li"),
+        			counter : function (e){
+        				$(".banner_yd li").removeClass("on").eq(e.current-1).addClass("on");
+        				counter=e.current-1;
+        			}
+				});
+				var banner_yd=$("div.banner_yd");
+				banner_yd.css("left",(($("div.raiders_main").width()-banner_yd.width())/2)+"px");
+			});
+		</script>
+	</head>
+<body>
+	<div class="gridContainer">
+		<div id="LayoutDiv1">
+			<div class="autoHeight">
+				<div class="raiders_main">
+					<div class="raiders_banner">
+						<div class="main_image">
+							<ul>
+								<li><img style="width:100%;height:100%;" src="images/htw/banner1.jpg"/></li>
+								<li><img style="width:100%;height:100%;" src="images/htw/banner2.jpg"/></li>
+								<li><img style="width:100%;height:100%;" src="images/htw/banner3.jpg"/></li>
+								<li><img style="width:100%;height:100%;" src="images/htw/banner4.jpg"/></li>
+								<li><img style="width:100%;height:100%;" src="images/htw/banner5.jpg"/></li>
+								<li><img style="width:100%;height:100%;" src="images/htw/banner6.jpg"/></li>
+							</ul>
+						</div>
+						<div class="banner_yd">
+	                        <ul>
+	                        	<li class="on">&nbsp;</li>
+	                            <li>&nbsp;</li>
+	                            <li>&nbsp;</li>
+	                            <li>&nbsp;</li>
+	                            <li>&nbsp;</li>
+	                            <li>&nbsp;</li>
+	                        </ul>
+	                    </div>
+	                </div>
+					<div class="raiders_introduction">
+						三亚海棠湾是最新的度假天堂，与亚龙湾、大东海湾、三亚湾、崖州湾并列为三亚旅游区的五大名湾。
+						海棠湾内南田温泉、蜈支洲岛、三亚免税店最为著名。
+						南田温泉素有“神舟第一泉”的美誉，拥有形态、功能各异的温泉池60多个，分布在天然椰林中，一池一景，包括有名的小鱼温泉。 
+						这里已经规划为南田温泉热带风情旅游城，将建设成为东南亚第一流的旅游观光度假胜地。
+						蜈支洲岛享有“中国第一潜水基地”美誉。是躲在亚龙湾美景身后静静绽放光彩的度假圣地，有人曾把它称作中国的马尔代夫。
+						更多的人把这里当作和情人逃离尘世后的天堂，因为它有一个更为浪漫和顺口的名字：“情人岛”。
+						四周海域毫无污染，海水清澈透明，最高能见度达27 米，拥有众多的海上娱乐项目：潜水、摩托艇、拖曳伞、香蕉船、半潜观光船、快艇海钓等等。
+						三亚免税店是由中国免税品（集团）有限责任公司倾力打造世界一流、亚洲领先的市内免税店。共分为两层，面积7000平方米，经营的高端香水、首饰、手表、皮具等几十类共两万种商品，包括近百个奢侈品牌。
+						其中GUCCI、Tiffany、阿玛尼、万宝龙等品牌都是首次在中国设立免税品牌。游客在三亚免税店购物的免税零售价格将比国内百货商场低10%至35%，与周边免税区域持平甚至更低。
+						<br />景点类型：海滩、温泉、美食、购物、民俗风情
+						<br />最佳季节：6月-8月最佳
+						<br />门票：部分免费 南田温泉198.00元 蜈支洲岛168.00元（ 含门票、往返船票、基金费）
+						<br />著名景点：南田温泉、蜈支洲岛、三亚免税店、椰子洲岛、伊斯兰古墓群、情人桥、后海湾、红树林
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

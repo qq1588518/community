@@ -1,0 +1,132 @@
+@charset "utf-8";
+body{font: 14px/100% arial,"Hiragino Sans GB","Hiragino Sans GB W3",Microsoft YaHei; color:#353536; background:#FFF;}
+body, div, ul, ol, li, h1,hr, form, input, textarea, p, th, td {
+    margin: 0;
+    padding: 0;
+	
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, nav, section { display: block; }
+audio, canvas, video { display: inline-block; *display: inline; *zoom: 1; }
+audio:not([controls]) { display: none; }
+[hidden] { display: none; }
+a {text-decoration:none;outline:none;color: inherit;}
+body,html{
+	margin:0px;
+	height:100%;
+}
+
+
+/* 移动设备布局: 480px 及更低。 */
+
+.gridContainer {
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 640px;
+	padding-left: 0;
+	padding-right: 0;
+	background:#fff;
+}
+#LayoutDiv1 {
+	clear: both;
+	float: left;
+	margin-left: 0;
+	width: 100%;
+	display: block;
+}
+
+.sign{
+	width:100%;
+	height:15.4%;
+	position:fixed;
+	bottom: 0;
+	max-width:640px;
+	border-top:#b3b3b3 solid 2px;
+}
+
+.sign_click{
+	width:50%;
+	height:100%;
+	background-image: -moz-linear-gradient(top, #dedede, #fff); /* Firefox */
+	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #dedede), color-stop(1, #fff)); /* Saf4+, Chrome */
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#dedede', endColorstr='#fff', f0f1f1);
+	float:left;
+}
+
+.sign_A{
+	width:50%;
+	height:100%;
+	background-image: -moz-linear-gradient(top, #ffffff, #f0f1f1); /* Firefox */
+	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #ffffff), color-stop(1, #f0f1f1)); /* Saf4+, Chrome */
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#538300', f0f1f1);
+	float:left;
+}
+
+.sign_padding{
+	width:100%;
+	height:15.3%;
+}
+
+.sign_pic{
+	width:11%;
+	margin:0 auto;
+	height:54.4%;
+}
+
+.sign_phone_pic{
+	width:16%;
+	height:54.4%;
+	margin:0 auto;
+}
+
+.sign_text{
+	width:100%;
+	text-align:center;
+	height:30.2%;
+}
+
+.autoHeight{
+	width:100%;
+	height:100%;
+	/*overflow:hidden;*/
+}
+
+.tobel{
+	width:100%;	
+}
+
+.tatol_main{
+	width:100%;
+	padding-bottom:26%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

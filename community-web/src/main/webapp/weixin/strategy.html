@@ -1,0 +1,164 @@
+<!DOCTYPE>
+<html>
+	<head>
+		<title>三亚攻略</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href="../css/mobile/common.css" rel="stylesheet" type="text/css"/>
+		<link href="../css/mobile/index.css" rel="stylesheet" type="text/css"/>
+		<script type="text/javascript" src="js/jquery-1.8.0.min.js"></script>
+		<script type="text/javascript" src="js/jquery.event.drag-1.5.min.js"></script>
+		<script type="text/javascript" src="js/jquery.touchSlider.js"></script>
+		<script type="text/javascript">
+			$(function(){
+				var counter=0;
+				var timer=setInterval(function(){
+					$(".banner_yd li").eq((counter%6)).click();
+					counter=(counter%6)+1;
+				},5000);
+				$(".raiders_banner").hover(function(){
+					clearInterval(timer);
+				},function(){
+					timer=setInterval(function(){
+						$(".banner_yd li").eq((counter%6)).click();
+						counter=(counter%6)+1;
+					},5000);
+				});
+				$(".banner_yd li").each(function(){
+					$(this).click(function(){
+						counter=$(this).index();
+					});
+				});
+				$("div .main_image").touchSlider({
+					flexible:true,
+					speed:200,
+					delay:5000,
+					mouseTouch:true,
+					autoplay:true,
+        			autoplay: true,
+        			paging : $(".banner_yd li"),
+        			counter : function (e){
+        				$(".banner_yd li").removeClass("on").eq(e.current-1).addClass("on");
+        				counter=e.current-1;
+        			}
+				});
+				var banner_yd=$("div.banner_yd");
+				banner_yd.css("left",(($("div.raiders_main").width()-banner_yd.width())/2)+"px");
+			});
+		</script>
+	</head>
+<body>
+	<div class="gridContainer">
+		<div id="LayoutDiv1">
+			<div class="autoHeight">
+				<div class="raiders_main">
+					<div class="raiders_banner">
+						<div class="main_image">
+							<ul>
+								<li><img style="width:100%;height:100%;" src="images/map.jpg"/></li>
+								<li><img style="width:100%;height:100%;" src="images/ddhw/banner1.jpg"/></li>
+								<li><img style="width:100%;height:100%;" src="images/syw/banner3.jpg"/></li>
+								<li><img style="width:100%;height:100%;" src="images/fhd/banner2.jpg"/></li>
+								<li><img style="width:100%;height:100%;" src="images/htw/banner1.jpg"/></li>
+								<li><img style="width:100%;height:100%;" src="images/htw/banner6.jpg"/></li>
+							</ul>
+						</div>
+						<div class="banner_yd">
+	                        <ul>
+	                        	<li class="on">&nbsp;</li>
+	                            <li>&nbsp;</li>
+	                            <li>&nbsp;</li>
+	                            <li>&nbsp;</li>
+	                            <li>&nbsp;</li>
+	                            <li>&nbsp;</li>
+	                        </ul>
+	                    </div>
+	                </div>
+					<div class="main_button">
+						<a href="syw.html">
+							<div class="raiders_border">
+								<div class="main_option_padding"></div>
+								<div class="main_option_pic" style="height:41%; padding-top:8.5%;">
+									<img width="39%" src="images/syw.png" />
+								</div>
+								<div class="main_option_text">三亚湾</div>
+							</div> 
+						</a> 
+						<a href="ddhw.html">
+							<div class="raiders_border">
+								<div class="main_option_padding"></div>
+								<div class="main_option_pic">
+									<img width="39%" src="images/ddhw.png" />
+								</div>
+								<div class="main_option_text">大东海湾</div>
+							</div> 
+						</a> 
+						<a href="ylw.html">
+							<div class="raiders_border" style="border-right:none;">
+								<div class="main_option_padding"></div>
+								<div class="main_option_pic" style="height:43%; padding-top:1.5%;">
+									<img width="40%" src="images/ylw.png" />
+								</div>
+								<div class="main_option_text">亚龙湾国家旅游度假区</div>
+							</div> 
+						</a> 
+						<a href="nswh.html">
+							<div class="raiders_border">
+								<div class="main_option_padding"></div>
+								<div class="main_option_pic">
+									<img width="34%" src="images/nswh.png" />
+								</div>
+								<div class="main_option_text">南山文化旅游区</div>
+							</div> 
+						</a> 
+						<a href="htw.html">
+							<div class="raiders_border">
+								<div class="main_option_padding"></div>
+								<div class="main_option_pic">
+									<img width="39%" src="images/htw.png" />
+								</div>
+								<div class="main_option_text">海棠湾</div>
+							</div> 
+						</a> 
+						<a href="lcl.html">
+							<div class="raiders_border" style="border-right:none;">
+								<div class="main_option_padding"></div>
+								<div class="main_option_pic" style="height:43%; padding-top:1.5%;">
+									<img width="37%" src="images/lcl.png" />
+								</div>
+								<div class="main_option_text">临春岭国家森林公园</div>
+							</div> 
+						</a> 
+						<a href="fhd.html">
+							<div class="raiders_border2">
+								<div class="main_option_padding"></div>
+								<div class="main_option_pic">
+									<img width="39%" src="images/fhd.png" />
+								</div>
+								<div class="main_option_text">凤凰岛</div>
+							</div> 
+						</a> 
+						<a href="mlzg.html">
+							<div class="raiders_border2">
+								<div class="main_option_padding"></div>
+								<div class="main_option_pic" style="height:46%; padding-top:3.5%;">
+									<img width="39%" src="images/mlzg.png" />
+								</div>
+								<div class="main_option_text">美丽之冠</div>
+							</div> 
+						</a> 
+						<a href="#">
+							<div class="raiders_border2" style="border-right:none;">
+								<div class="main_option_padding" style=" height:37%;"></div>
+								<div class="main_option_pic">
+									<img width="30%" src="images/add.png" />
+								</div>
+							</div> 
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

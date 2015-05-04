@@ -1,0 +1,43 @@
+body,div,form{margin:0;padding:0;}
+body{font-size:13px; word-wrap:break-word; word-break:break-all; font-family: "Century Gothic","Microsoft yahei";}
+html {_background-image:url(about:blank);_background-attachment:fixed;}
+html,body{ width:100%;}
+a{text-decoration:none;color:#777777; outline:none;}
+a:hover{ color:#2a57a4;}
+
+.fl{float:left}
+.fr{float:right}
+
+
+.home_content{ width:100%; height:635px; background:url(../images/sy_bg.png) repeat-x;}
+/**
+.home_content_htw_1{ width:100%; height:635px; background:url(../images/project/bg_HTW_1.png) repeat-x;}
+.home_content_htw_2{ width:100%; height:635px; background:url(../images/project/bg_HTW_2.png) repeat-x;}
+.home_content_ljk{ width:100%; height:635px; background:url(../images/project/bg_LJK.png) repeat-x;}
+.home_content_nsh{ width:100%; height:635px; background:url(../images/project/bg_NSH.png) repeat-x;}
+**/
+
+.home_nr{ width:1013px; height:auto; margin:auto;}
+.home_top{ width:1013px; height:75px;}
+.home_top_left{ width:227px; height:75px;}
+.home_top_tright{ width:132px; height:75px;}
+
+.home_banner{ width:913px; height:397px; /**background:url(../images/banner1.png) no-repeat;*/ margin-top:8px;}
+.home_banner_htw_1{ width:913px; height:397px; background:url(../images/banner_htw_1.png) no-repeat; margin-top:8px;}
+.home_banner_htw_2{ width:913px; height:397px; background:url(../images/banner_htw_2.png) no-repeat; margin-top:8px;}
+.home_banner_ljk{ width:913px; height:397px; background:url(../images/banner_ljk.png) no-repeat; margin-top:8px;}
+.home_banner_nsh{ width:913px; height:397px; background:url(../images/banner_nsh.png) no-repeat; margin-top:8px;}
+
+.home_banner_gg{ width:430px; height:128px; padding-top:245px; padding-left:485px; line-height:20px; color:#fff; letter-spacing:1px;}
+.home_nav{ width:1013px; height:64px; margin-top:45px;}
+.home_nav1{ width:500px; height:64px; margin:0 100px;}
+.home_nav1 img{border-radius: 5px;}
+/*.home_nav2{ width:235px; height:64px; margin-right:200px;}*/
+.home_foot{ width:100%; margin-top:20px; text-align:center; color:#646464;}
+
+.sy_content{ width:100%; height:635px; background:url(../images/home_bg_lrzl.png) repeat-x;}
+.sy_nr{ width:990px; height:auto;}
+.sy_nr_an1{ width:218px; height:90px;  margin-top:25px; margin-left:10px;border-radius: 8px;}
+.sy_nr_an1 img{
+	border-radius: 8px;
+}

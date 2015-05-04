@@ -1,0 +1,168 @@
+<!DOCTYPE>
+<html>
+	<head>
+		<title>丽冠雅居</title>
+		<meta charset="utf-8">
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta content="telephone=yes, address=no" name="format-detection">
+    	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    	<meta name="apple-mobile-web-app-capable" content="yes">
+    	<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href="css/index.css" rel="stylesheet" type="text/css"/>
+		<link href="css/common.css" rel="stylesheet" type="text/css"/>
+		<script type="text/javascript" src="js/jquery-1.8.0.min.js"></script>
+		<script type="text/javascript" src="js/jquery.event.drag-1.5.min.js"></script>
+		<script type="text/javascript" src="js/jquery.touchSlider.js"></script>
+		<script type="text/javascript">
+			$(function(){
+				$("div.sign").children("div").each(function(){
+					$(this).hover(function(){
+						$(this).removeClass("sign_A").addClass("sign_click").siblings().removeClass("sign_click").addClass("sign_A");
+					},function(){
+						$(this).removeClass("sign_click").addClass("sign_A");
+					});
+				});
+				$("div.main_button").children("div").each(function(){
+					$(this).hover(function(){
+						$(this).removeClass("main_option").addClass("main_option_click").siblings().removeClass("main_option_click").addClass("main_option");
+					},function(){
+						$(this).removeClass("main_option_click").addClass("main_option");
+					});
+				});
+				var counter=0;
+				var timer=setInterval(function(){
+					$(".banner_yd li").eq((counter%6)).click();
+					counter=(counter%6)+1;
+				},5000);
+				$(".banner").hover(function(){
+					clearInterval(timer);
+				},function(){
+					timer=setInterval(function(){
+						$(".banner_yd li").eq((counter%6)).click();
+						counter=(counter%6)+1;
+					},5000);
+				});
+				$(".banner_yd li").each(function(){
+					$(this).click(function(){
+						counter=$(this).index();
+					});
+				});
+				$("div .main_image").touchSlider({
+					flexible:true,
+					speed:200,
+					delay:5000,
+					mouseTouch:true,
+					autoplay:true,
+        			autoplay: true,
+        			paging : $(".banner_yd li"),
+        			counter : function (e){
+        				$(".banner_yd li").removeClass("on").eq(e.current-1).addClass("on");
+        				counter=e.current-1;
+        			}
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<div class="gridContainer clearfix">
+			<div id="LayoutDiv1">
+				<div class="autoHeight">
+					<div class="main">
+						<div class="banner">
+							<div class="main_image">
+								<ul>
+									<li><img style="width:100%;height:100%;" src="images/banner1.jpg"/></li>
+									<li><img style="width:100%;height:100%;" src="images/banner2.jpg"/></li>
+									<li><img style="width:100%;height:100%;" src="images/banner3.jpg"/></li>
+									<li><img style="width:100%;height:100%;" src="images/banner4.jpg"/></li>
+									<li><img style="width:100%;height:100%;" src="images/banner5.jpg"/></li>
+									<li><img style="width:100%;height:100%;" src="images/banner6.jpg"/></li>
+								</ul>
+							</div>
+							<div class="banner_yd">
+		                        <ul>
+		                        	<li class="on">&nbsp;</li>
+		                            <li>&nbsp;</li>
+		                            <li>&nbsp;</li>
+		                            <li>&nbsp;</li>
+		                            <li>&nbsp;</li>
+		                            <li>&nbsp;</li>
+		                        </ul>
+		                    </div>
+		                </div>
+						<div class="main_button">
+							<div style="border-right: #b3b3b3 solid 2px;width:49.6%;height:31%;float:left;">
+								<a href="option.html">
+									<div class="main_option_padding"></div>
+									<div class="main_option_pic">
+										<img width="18%" src="images/xmgk.png" />
+									</div>
+									<div class="main_option_text">
+										项目概况
+									</div>
+								</a>
+							</div>
+							<div style="width:49.6%;height:31%;float:left;">
+								<a href="house.html">
+								<div class="main_option_padding"></div>
+								<div class="main_option_pic">
+									<img width="18%" src="images/rxhx.png" />
+								</div>
+								<div class="main_option_text">
+									热销户型
+								</div>
+								</a>
+							</div>
+							<div style="border-top: #b3b3b3 solid 2px; border-right: #b3b3b3 solid 2px;width:49.6%;height:31%;float:left;">
+								<a href="scenery.html">
+									<div class="main_option_padding"></div>
+									<div class="main_option_pic">
+										<img width="21%" src="images/jgyl.png" />
+									</div>
+									<div class="main_option_text">
+										景观园林
+									</div>
+								</a>
+							</div>
+							<div style="border-top: #b3b3b3 solid 2px;width:49.6%;height:31%;float:left;">
+								<a href="#">
+									<div class="main_option_padding"></div>
+									<div class="main_option_pic">
+										<img width="20%" src="images/360zs.png" />
+									</div>
+									<div class="main_option_text">
+										360°展示
+									</div>
+								</a>
+							</div>
+						</div>
+					</div>
+					<div class="sign">
+						<div class="sign_A">
+							<a href="daohang.html">
+								<div class="sign_padding"></div>
+								<div class="sign_pic">
+									<img width="100%" src="images/yjdh.png" />
+								</div>
+								<div class="sign_text">
+									一键导航
+								</div>
+							</a>
+						</div>
+						<div class="sign_A">
+							<a href="tel:089888666666">
+								<div class="sign_padding"></div>
+								<div class="sign_phone_pic">
+									<img width="100%" src="images/yjbh.png" />
+								</div>
+								<div class="sign_text">
+									一键拨号
+								</div>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

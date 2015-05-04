@@ -1,0 +1,92 @@
+<!DOCTYPE>
+<html>
+	<head>
+		<title>南山文化旅游区</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href="../css/mobile/common.css" rel="stylesheet" type="text/css"/>
+		<link href="../css/mobile/index.css" rel="stylesheet" type="text/css"/>
+		<script type="text/javascript" src="js/jquery-1.8.0.min.js"></script>
+		<script type="text/javascript" src="js/jquery.event.drag-1.5.min.js"></script>
+		<script type="text/javascript" src="js/jquery.touchSlider.js"></script>
+		<script type="text/javascript">
+			$(function(){
+				var counter=0;
+				var timer=setInterval(function(){
+					$(".banner_yd li").eq((counter%5)).click();
+					counter=(counter%5)+1;
+				},5000);
+				$(".raiders_banner").hover(function(){
+					clearInterval(timer);
+				},function(){
+					timer=setInterval(function(){
+						$(".banner_yd li").eq((counter%5)).click();
+						counter=(counter%5)+1;
+					},5000);
+				});
+				$(".banner_yd li").each(function(){
+					$(this).click(function(){
+						counter=$(this).index();
+					});
+				});
+				$("div .main_image").touchSlider({
+					flexible:true,
+					speed:200,
+					delay:5000,
+					mouseTouch:true,
+					autoplay:true,
+        			autoplay: true,
+        			paging : $(".banner_yd li"),
+        			counter : function (e){
+        				$(".banner_yd li").removeClass("on").eq(e.current-1).addClass("on");
+        				counter=e.current-1;
+        			}
+				});
+				var banner_yd=$("div.banner_yd");
+				banner_yd.css("left",(($("div.raiders_main").width()-banner_yd.width())/2)+"px");
+			});
+		</script>
+	</head>
+<body>
+	<div class="gridContainer">
+		<div id="LayoutDiv1">
+			<div class="autoHeight">
+				<div class="raiders_main">
+					<div class="raiders_banner">
+						<div class="main_image">
+							<ul>
+								<li><img style="width:100%;height:100%;" src="images/nswh/banner1.jpg"/></li>
+								<li><img style="width:100%;height:100%;" src="images/nswh/banner3.jpg"/></li>
+								<li><img style="width:100%;height:100%;" src="images/nswh/banner4.jpg"/></li>
+								<li><img style="width:100%;height:100%;" src="images/nswh/banner5.jpg"/></li>
+								<li><img style="width:100%;height:100%;" src="images/nswh/banner6.jpg"/></li>
+							</ul>
+						</div>
+						<div class="banner_yd">
+	                        <ul>
+	                        	<li class="on">&nbsp;</li>
+	                            <li>&nbsp;</li>
+	                            <li>&nbsp;</li>
+	                            <li>&nbsp;</li>
+	                            <li>&nbsp;</li>
+	                        </ul>
+	                    </div>
+	                </div>
+					<div class="raiders_introduction">
+						南山文化旅游区位于三亚南山，距市区40公里。
+						南山文化旅游区共分为三大主题公园：南山佛教文化园是一座展示中国佛教传统文化，富有深刻哲理寓意，
+						能够启迪心智、教化人生的园区。其主要建筑有南山寺、南海观音佛像、观音文化苑、天竺圣迹、佛名胜景观苑、十方塔林与归根园、佛教文化交流中心、素斋购物一条街等。
+						中国福寿文化园是一座集中华民族文化精髓，突出表现和平、安宁、幸福、祥和之气氛的园区；南海风情文化园，
+						是一座得用南山一带蓝天碧海、阳光沙滩、山林海礁等景观的独特魅力，突出展现中国南海之滨的自然风光和黎村苗寨的文化风情，
+						同时兼容一些西方现代化文明的园区，主要建筑有滑草场、滑沙场、黎苗风情苑、神话漫游世界、黄道婆纪念馆、海洋公园、海底世界、花鸟天堂等。
+						<br />景点类型：海滩、人文景观、民俗风情
+						<br />最佳季节：全年
+						<br />门票：150元，开放时间8：00-17：00
+						<br />著名景点：南山寺、南山海上观音、天涯海角、福寿文化园、大小洞天、黎苗欢乐谷
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

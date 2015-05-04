@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<taglib xmlns="http://java.sun.com/xml/ns/j2ee"  
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  
+        xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-jsptaglibrary_2_0.xsd"  
+        version="2.0">  
+  
+    <description>My Tag Library</description>  
+    <tlib-version>1.0</tlib-version>  
+    <short-name>my</short-name>  
+    <uri>/platform-taglib</uri>  
+  
+    <tag>  
+        <description>split page</description>  
+        <name>paging</name>  
+        <tag-class>com.meigu.community.util.tag.PagingTag</tag-class>  
+        <body-content>empty</body-content>  
+        <attribute>  
+            <description>base href</description>  
+            <name>href</name>  
+            <required>false</required>  
+            <rtexprvalue>true</rtexprvalue>  
+        </attribute>  
+        <attribute>  
+            <description>curr page</description>  
+            <name>curr</name>  
+            <required>true</required>  
+            <rtexprvalue>true</rtexprvalue>  
+        </attribute>  
+        <attribute>  
+            <description>page size</description>  
+            <name>size</name>  
+            <required>true</required>  
+            <rtexprvalue>true</rtexprvalue>  
+        </attribute>  
+        <attribute>  
+            <description>total page</description>  
+            <name>total</name>  
+            <required>true</required>  
+            <rtexprvalue>true</rtexprvalue>  
+        </attribute>  
+        <attribute>  
+            <description>curr parameter name</description>  
+            <name>cparam</name>  
+            <required>false</required>  
+            <rtexprvalue>false</rtexprvalue>  
+        </attribute>  
+        <attribute>  
+            <description>page size parameter name</description>  
+            <name>sparam</name>  
+            <required>false</required>  
+            <rtexprvalue>false</rtexprvalue>  
+        </attribute>  
+        <dynamic-attributes>false</dynamic-attributes>  
+    </tag>
+    
+    <tag>
+		<name>dft</name>
+		<tag-class>com.meigu.community.util.tag.DateFormatTag</tag-class>
+		<body-content>empty</body-content>
+		<display-name>dateformat</display-name>
+		<description><![CDATA[前端页面日期转换展示标签]]></description>
+		<attribute>
+			<name>value</name>
+			<type>java.lang.Object</type>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[需要转换的日期值]]></description>
+		</attribute>
+		<attribute>
+			<name>pattern</name>
+			<type>java.lang.String</type>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[转换格式]]></description>
+		</attribute>
+		<attribute>
+			<name>type</name>
+			<type>java.lang.String</type>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[原始数据格式(针对字符串类型值)]]></description>
+		</attribute>
+	</tag>
+	
+	<tag>
+		<name>textCut</name>
+		<tag-class>com.meigu.community.util.tag.TextCutTag</tag-class>
+		<body-content>empty</body-content>
+		<display-name></display-name>
+		<description><![CDATA[字符截取展示标签]]></description>
+		<attribute>
+			<name>value</name>
+			<type>java.lang.String</type>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[需要处理的值]]></description>
+		</attribute>
+		<attribute>
+			<name>type</name>
+			<type>java.lang.String</type>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[传值类型(text;html;xml;)]]></description>
+		</attribute>
+		<attribute>
+			<name>start</name>
+			<type>java.lang.Integer</type>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[开始截取位置]]></description>
+		</attribute>
+		<attribute>
+			<name>end</name>
+			<type>java.lang.Integer</type>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[结束截取位置]]></description>
+		</attribute>
+		<attribute>
+			<name>search</name>
+			<type>java.lang.String</type>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[需要搜索的字符串]]></description>
+		</attribute>
+		<attribute>
+			<name>replace</name>
+			<type>java.lang.String</type>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[需要替换的字符串]]></description>
+		</attribute>
+		<attribute>
+			<name>symbol</name>
+			<type>java.lang.String</type>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[结束符]]></description>
+		</attribute>
+		<attribute>
+			<name>residue</name>
+			<type>java.lang.Integer</type>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[剩余字数]]></description>
+		</attribute>
+		<attribute>
+			<name>clean</name>
+			<type>java.lang.Boolean</type>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[是否清除html样式,图片等...]]></description>
+		</attribute>
+	</tag>
+	
+	<tag>
+		<name>flowstatus</name>
+		<tag-class>com.meigu.community.util.tag.FlowStatusTag</tag-class>
+		<body-content>empty</body-content>
+		<display-name></display-name>
+		<description><![CDATA[流程状态显示标签]]></description>
+		<attribute>
+			<name>key</name>
+			<type>java.lang.String</type>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[状态值]]></description>
+		</attribute>
+	</tag>
+	
+	<tag>
+		<name>lotteryrate</name>
+		<tag-class>com.meigu.community.util.tag.LotteryRateTag</tag-class>
+		<body-content>empty</body-content>
+		<display-name></display-name>
+		<description><![CDATA[抽奖活动频率显示标签]]></description>
+		<attribute>
+			<name>key</name>
+			<type>java.lang.String</type>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description><![CDATA[频率值]]></description>
+		</attribute>
+	</tag>
+	
+</taglib>  

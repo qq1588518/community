@@ -1,0 +1,82 @@
+<!DOCTYPE>
+<html>
+	<head>
+		<title>美丽之冠</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href="../css/mobile/common.css" rel="stylesheet" type="text/css"/>
+		<link href="../css/mobile/index.css" rel="stylesheet" type="text/css"/>
+		<script type="text/javascript" src="js/jquery-1.8.0.min.js"></script>
+		<script type="text/javascript" src="js/jquery.event.drag-1.5.min.js"></script>
+		<script type="text/javascript" src="js/jquery.touchSlider.js"></script>
+		<script type="text/javascript">
+			$(function(){
+				var counter=0;
+				var timer=setInterval(function(){
+					$(".banner_yd li").eq((counter%2)).click();
+					counter=(counter%2)+1;
+				},5000);
+				$(".raiders_banner").hover(function(){
+					clearInterval(timer);
+				},function(){
+					timer=setInterval(function(){
+						$(".banner_yd li").eq((counter%2)).click();
+						counter=(counter%2)+1;
+					},5000);
+				});
+				$(".banner_yd li").each(function(){
+					$(this).click(function(){
+						counter=$(this).index();
+					});
+				});
+				$("div .main_image").touchSlider({
+					flexible:true,
+					speed:200,
+					delay:5000,
+					mouseTouch:true,
+					autoplay:true,
+        			autoplay: true,
+        			paging : $(".banner_yd li"),
+        			counter : function (e){
+        				$(".banner_yd li").removeClass("on").eq(e.current-1).addClass("on");
+        				counter=e.current-1;
+        			}
+				});
+				var banner_yd=$("div.banner_yd");
+				banner_yd.css("left",(($("div.raiders_main").width()-banner_yd.width())/2)+"px");
+			});
+		</script>
+	</head>
+<body>
+	<div class="gridContainer">
+		<div id="LayoutDiv1">
+			<div class="autoHeight">
+				<div class="raiders_main">
+					<div class="raiders_banner">
+						<div class="main_image">
+							<ul>
+								<li><img style="width:100%;height:100%;" src="images/mlzg/banner1.jpg"/></li>
+								<li><img style="width:100%;height:100%;" src="images/mlzg/banner2.jpg"/></li>
+							</ul>
+						</div>
+						<div class="banner_yd">
+	                        <ul>
+	                        	<li class="on">&nbsp;</li>
+	                            <li>&nbsp;</li>
+	                        </ul>
+	                    </div>
+	                </div>
+					<div class="raiders_introduction">
+						美丽之冠七星酒店屹立于美丽的三亚，临山面水，位置优越，环境独特，项目总体的建筑规模为60万平方米，
+						是集超豪华酒店、商业、会展、娱乐、休闲、文化、博彩等为一体的超大型世界级酒店建筑群。
+						总投资超过100亿RMB，是中国目前总投资最大的酒店项目建筑群，也是连续三届世界小姐总决赛举办地。
+						<br />景点类型：人文艺术、休闲娱乐、商业文化
+						<br />门票：免费（观看演出需购票，票价280元）
+						<br />著名景点：海南国际会展中心、全球顶级七星级酒店、世界博览会、顶级游艇会、酒吧风情街
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

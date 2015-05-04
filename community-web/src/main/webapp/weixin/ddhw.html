@@ -1,0 +1,96 @@
+<!DOCTYPE>
+<html>
+	<head>
+		<title>大东海湾</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href="../css/mobile/common.css" rel="stylesheet" type="text/css"/>
+		<link href="../css/mobile/index.css" rel="stylesheet" type="text/css"/>
+		<script type="text/javascript" src="js/jquery-1.8.0.min.js"></script>
+		<script type="text/javascript" src="js/jquery.event.drag-1.5.min.js"></script>
+		<script type="text/javascript" src="js/jquery.touchSlider.js"></script>
+		<script type="text/javascript">
+			$(function(){
+				var counter=0;
+				var timer=setInterval(function(){
+					$(".banner_yd li").eq((counter%8)).click();
+					counter=(counter%8)+1;
+				},5000);
+				$(".raiders_banner").hover(function(){
+					clearInterval(timer);
+				},function(){
+					timer=setInterval(function(){
+						$(".banner_yd li").eq((counter%8)).click();
+						counter=(counter%8)+1;
+					},5000);
+				});
+				$(".banner_yd li").each(function(){
+					$(this).click(function(){
+						counter=$(this).index();
+					});
+				});
+				$("div .main_image").touchSlider({
+					flexible:true,
+					speed:200,
+					delay:5000,
+					mouseTouch:true,
+					autoplay:true,
+        			autoplay: true,
+        			paging : $(".banner_yd li"),
+        			counter : function (e){
+        				$(".banner_yd li").removeClass("on").eq(e.current-1).addClass("on");
+        				counter=e.current-1;
+        			}
+				});
+				var banner_yd=$("div.banner_yd");
+				banner_yd.css("left",(($("div.raiders_main").width()-banner_yd.width())/2)+"px");
+			});
+		</script>
+	</head>
+<body>
+	<div class="gridContainer">
+		<div id="LayoutDiv1">
+			<div class="autoHeight">
+				<div class="raiders_main">
+					<div class="raiders_banner">
+						<div class="main_image">
+							<ul>
+								<li><img style="width:100%;height:100%;" src="images/ddhw/banner.jpg"/></li>
+								<li><img style="width:100%;height:100%;" src="images/ddhw/banner1.jpg"/></li>
+								<li><img style="width:100%;height:100%;" src="images/ddhw/banner2.jpg"/></li>
+								<li><img style="width:100%;height:100%;" src="images/ddhw/banner3.jpg"/></li>
+								<li><img style="width:100%;height:100%;" src="images/ddhw/banner4.jpg"/></li>
+								<li><img style="width:100%;height:100%;" src="images/ddhw/banner5.jpg"/></li>
+								<li><img style="width:100%;height:100%;" src="images/ddhw/banner6.jpg"/></li>
+								<li><img style="width:100%;height:100%;" src="images/ddhw/banner7.jpg"/></li>
+							</ul>
+						</div>
+						<div class="banner_yd">
+	                        <ul>
+	                        	<li class="on">&nbsp;</li>
+	                            <li>&nbsp;</li>
+	                            <li>&nbsp;</li>
+	                            <li>&nbsp;</li>
+	                            <li>&nbsp;</li>
+	                            <li>&nbsp;</li>
+	                            <li>&nbsp;</li>
+	                            <li>&nbsp;</li>
+	                        </ul>
+	                    </div>
+	                </div>
+					<div class="raiders_introduction">
+						大东海位于三亚市市区的榆林港和鹿回头之间，海岸线长2.9公里，“水暖沙白滩平”早已使大东海斐声海内外。 
+						大东海三面环山，一面大海，一排排翠绿椰林环抱沙滩，蓝天、碧海、青山、绿椰、白沙滩独特之美博得海内外游客的赞叹。
+						大东海沙滩平坦细软，缓缓延伸，长达千米。 冬季水温在18－22℃左右，成为冬泳避寒胜地，也是三亚开发最早、最成熟的海滨度假区。
+						此外，这里也有很好的潜水处，会有教练带你下水。
+						<br />景点类型：海滩
+						<br />最佳季节：11月至次年3月是人气最旺的时候，冬季水温有18度，是避寒胜地。
+						<br />门票：免费（景区内娱乐项目收费，详情请参考景区内公告）
+						<br/>著名景点：鹿回头、半山半岛、情人湾
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

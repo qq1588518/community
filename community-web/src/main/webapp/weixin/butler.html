@@ -1,0 +1,145 @@
+<!DOCTYPE>
+<html>
+	<head>
+		<title>丽冠雅居-贴心管家</title>
+				<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href="css/common.css" rel="stylesheet" type="text/css"/>
+		<link href="css/index.css" rel="stylesheet" type="text/css"/>
+		<script type="text/javascript" src="js/jquery-1.8.0.min.js"></script>
+		<script type="text/javascript" src="js/jquery.event.drag-1.5.min.js"></script>
+		<script type="text/javascript" src="js/jquery.touchSlider.js"></script>
+		<script type="text/javascript">
+			$(function(){
+				var counter=0;
+				var timer=setInterval(function(){
+					$(".banner_yd li").eq((counter%8)).click();
+					counter=(counter%8)+1;
+				},5000);
+				$(".banner").hover(function(){
+					clearInterval(timer);
+				},function(){
+					timer=setInterval(function(){
+						$(".banner_yd li").eq((counter%8)).click();
+						counter=(counter%8)+1;
+					},5000);
+				});
+				$(".banner_yd li").each(function(){
+					$(this).click(function(){
+						counter=$(this).index();
+					});
+				});
+				$("div .main_image").touchSlider({
+					flexible:true,
+					speed:200,
+					delay:5000,
+					mouseTouch:true,
+					autoplay:true,
+        			autoplay: true,
+        			paging : $(".banner_yd li"),
+        			counter : function (e){
+        				$(".banner_yd li").removeClass("on").eq(e.current-1).addClass("on");
+        				counter=e.current-1;
+        			}
+				});
+				$("div.banner_yd").css("left",(($("div.banner").width()-$("div.banner_yd").width())/2)+"px");
+			});
+		</script>
+	</head>
+	<body>
+		<div class="gridContainer clearfix">
+			<div id="LayoutDiv1">
+				<div class="autoHeight">
+					<div class="main">
+						<div class="banner">
+							<div class="main_image">
+								<ul>
+									<li><img style="width:100%;height:100%;" src="images/banner_bj.jpg"/></li>
+									<li><img style="width:100%;height:100%;" src="images/banner_wx.jpg"/></li>
+									<li><img style="width:100%;height:100%;" src="images/banner_gx.jpg"/></li>
+									<li><img style="width:100%;height:100%;" src="images/banner_zc.jpg"/></li>
+								</ul>
+							</div>
+							<div class="banner_yd">
+		                        <ul>
+		                        	<li class="on">&nbsp;</li>
+		                            <li>&nbsp;</li>
+		                            <li>&nbsp;</li>
+		                            <li>&nbsp;</li>
+		                        </ul>
+		                    </div>
+		                </div>
+						<div class="main_button">
+							<div style="border-right: #b3b3b3 solid 2px;width:49.6%;height:31%;float:left;">
+								<a href="../mobile/flow/list/mycategory/4">
+									<div class="main_option_padding"></div>
+									<div class="main_option_pic">
+										<img width="17%" src="images/baojie.png" />
+									</div>
+									<div class="main_option_text">
+										保&nbsp;&nbsp;洁</div>
+								</a>
+							</div>
+							<div style="width:49.6%;height:31%;float:left;">
+								<a href="../mobile/flow/list/mycategory/5">
+								<div class="main_option_padding"></div>
+								<div class="main_option_pic">
+									<img width="18%" src="images/weixiu.png" />
+								</div>
+								<div class="main_option_text">
+									维&nbsp;&nbsp;修</div>
+								</a>
+							</div>
+							<div style="border-top: #b3b3b3 solid 2px; border-right: #b3b3b3 solid 2px;width:49.6%;height:31%;float:left;">
+								<a href="../mobile/flow/list/mycategory/6">
+									<div class="main_option_padding"></div>
+									<div class="main_option_pic">
+										<img width="17%" src="images/ganxi.png" />
+									</div>
+									<div class="main_option_text">
+										干&nbsp;&nbsp;洗
+									</div>
+								</a>
+							</div>
+							<div style="border-top: #b3b3b3 solid 2px;width:49.6%;height:31%;float:left;">
+								<a href="../mobile/flow/list/mycategory/7">
+									<div class="main_option_padding"></div>
+									<div class="main_option_pic">
+										<img width="21%" src="images/yy_car.jpg" />
+									</div>
+									<div class="main_option_text">
+										租&nbsp;&nbsp;车
+									</div>
+								</a>
+							</div>
+						</div>
+					</div>
+					<div class="sign">
+						<div class="sign_A">
+							<a href="daohang.html">
+								<div class="sign_padding"></div>
+								<div class="sign_pic">
+									<img width="100%" src="images/yjdh.png" />
+								</div>
+								<div class="sign_text">
+									一键导航
+								</div>
+							</a>
+						</div>
+						<div class="sign_A">
+							<a href="tel:089888666666">
+								<div class="sign_padding"></div>
+								<div class="sign_phone_pic">
+									<img width="100%" src="images/yjbh.png" />
+								</div>
+								<div class="sign_text">
+									一键拨号
+								</div>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

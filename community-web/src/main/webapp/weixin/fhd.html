@@ -1,0 +1,85 @@
+<!DOCTYPE>
+<html>
+	<head>
+		<title>凤凰岛</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href="../css/mobile/common.css" rel="stylesheet" type="text/css"/>
+		<link href="../css/mobile/index.css" rel="stylesheet" type="text/css"/>
+		<script type="text/javascript" src="js/jquery-1.8.0.min.js"></script>
+		<script type="text/javascript" src="js/jquery.event.drag-1.5.min.js"></script>
+		<script type="text/javascript" src="js/jquery.touchSlider.js"></script>
+		<script type="text/javascript">
+			$(function(){
+				var counter=0;
+				var timer=setInterval(function(){
+					$(".banner_yd li").eq((counter%3)).click();
+					counter=(counter%3)+1;
+				},5000);
+				$(".raiders_banner").hover(function(){
+					clearInterval(timer);
+				},function(){
+					timer=setInterval(function(){
+						$(".banner_yd li").eq((counter%3)).click();
+						counter=(counter%3)+1;
+					},5000);
+				});
+				$(".banner_yd li").each(function(){
+					$(this).click(function(){
+						counter=$(this).index();
+					});
+				});
+				$("div .main_image").touchSlider({
+					flexible:true,
+					speed:200,
+					delay:5000,
+					mouseTouch:true,
+					autoplay:true,
+        			autoplay: true,
+        			paging : $(".banner_yd li"),
+        			counter : function (e){
+        				$(".banner_yd li").removeClass("on").eq(e.current-1).addClass("on");
+        				counter=e.current-1;
+        			}
+				});
+				var banner_yd=$("div.banner_yd");
+				banner_yd.css("left",(($("div.raiders_main").width()-banner_yd.width())/2)+"px");
+			});
+		</script>
+	</head>
+<body>
+	<div class="gridContainer">
+		<div id="LayoutDiv1">
+			<div class="autoHeight">
+				<div class="raiders_main">
+					<div class="raiders_banner">
+						<div class="main_image">
+							<ul>
+								<li><img style="width:100%;height:100%;" src="images/fhd/banner.jpg"/></li>
+								<li><img style="width:100%;height:100%;" src="images/fhd/banner1.jpg"/></li>
+								<li><img style="width:100%;height:100%;" src="images/fhd/banner2.jpg"/></li>
+							</ul>
+						</div>
+						<div class="banner_yd">
+	                        <ul>
+	                        	<li class="on">&nbsp;</li>
+	                            <li>&nbsp;</li>
+	                            <li>&nbsp;</li>
+	                        </ul>
+	                    </div>
+	                </div>
+					<div class="raiders_introduction">
+						三亚凤凰岛位于三亚市三亚湾度假区“阳光海岸”的核心，是在大海礁盘之中吹填出的人工岛。
+						该岛四面临海，由一座长394米、宽17米的跨海观光大桥与市区滨海大道光明路相连，距三亚市繁华商业主路解放路垂直距离小于1000米，
+						南侧临鹿回头公园，东南侧临三亚河入海口，西侧为东、西玳瑁岛，北侧濒临优美的17公里长三亚湾海滩。
+						凤凰岛四面临海，拥有得天独厚的山海天旅游风光，具备海上娱乐、水上运动和全季候度假旅游的条件。是世界十大国际邮轮母港之一。
+						<br />景点类型：海岛
+						<br />最佳季节：全年
+						<br />著名景点：国际邮轮港、超星级酒店、国际养生度假中心、奥运主题公园、国际游艇会所
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

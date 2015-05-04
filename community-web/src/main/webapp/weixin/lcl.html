@@ -1,0 +1,90 @@
+<!DOCTYPE>
+<html>
+	<head>
+		<title>临春岭国家森林公园</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href="../css/mobile/common.css" rel="stylesheet" type="text/css"/>
+		<link href="../css/mobile/index.css" rel="stylesheet" type="text/css"/>
+		<script type="text/javascript" src="js/jquery-1.8.0.min.js"></script>
+		<script type="text/javascript" src="js/jquery.event.drag-1.5.min.js"></script>
+		<script type="text/javascript" src="js/jquery.touchSlider.js"></script>
+		<script type="text/javascript">
+			$(function(){
+				var counter=0;
+				var timer=setInterval(function(){
+					$(".banner_yd li").eq((counter%6)).click();
+					counter=(counter%6)+1;
+				},5000);
+				$(".raiders_banner").hover(function(){
+					clearInterval(timer);
+				},function(){
+					timer=setInterval(function(){
+						$(".banner_yd li").eq((counter%6)).click();
+						counter=(counter%6)+1;
+					},5000);
+				});
+				$(".banner_yd li").each(function(){
+					$(this).click(function(){
+						counter=$(this).index();
+					});
+				});
+				$("div .main_image").touchSlider({
+					flexible:true,
+					speed:200,
+					delay:5000,
+					mouseTouch:true,
+					autoplay:true,
+        			autoplay: true,
+        			paging : $(".banner_yd li"),
+        			counter : function (e){
+        				$(".banner_yd li").removeClass("on").eq(e.current-1).addClass("on");
+        				counter=e.current-1;
+        			}
+				});
+				var banner_yd=$("div.banner_yd");
+				banner_yd.css("left",(($("div.raiders_main").width()-banner_yd.width())/2)+"px");
+			});
+		</script>
+	</head>
+<body>
+	<div class="gridContainer">
+		<div id="LayoutDiv1">
+			<div class="autoHeight">
+				<div class="raiders_main">
+					<div class="raiders_banner">
+						<div class="main_image">
+							<ul>
+								<li><img style="width:100%;height:100%;" src="images/banner1.jpg"/></li>
+								<li><img style="width:100%;height:100%;" src="images/banner2.jpg"/></li>
+								<li><img style="width:100%;height:100%;" src="images/banner3.jpg"/></li>
+								<li><img style="width:100%;height:100%;" src="images/banner4.jpg"/></li>
+								<li><img style="width:100%;height:100%;" src="images/banner5.jpg"/></li>
+								<li><img style="width:100%;height:100%;" src="images/banner6.jpg"/></li>
+							</ul>
+						</div>
+						<div class="banner_yd">
+	                        <ul>
+	                        	<li class="on">&nbsp;</li>
+	                            <li>&nbsp;</li>
+	                            <li>&nbsp;</li>
+	                            <li>&nbsp;</li>
+	                            <li>&nbsp;</li>
+	                            <li>&nbsp;</li>
+	                        </ul>
+	                    </div>
+	                </div>
+					<div class="raiders_introduction">
+						临春岭森林公园位于三亚市凤凰路临春段，占地面积2800亩，海拔最高点为195.6米，公园设主入口和北门，
+						建有公园主广场和登山栈道5500米，沿登山栈道建有逐鹿台、瞭望塔、茶亭、半山揽月、凤凰林、对弈台6个观景点[1] 。
+						开园时间为每天早上7点至晚上21点，全年无休。临春岭森林公园是三亚市唯一一处开放式公益性的森林公园。
+						<br />景点类型：登山、观景、生态养生
+						<br />最佳季节：全年
+						<br />著名景点：瞭望塔，可俯瞰三亚全景
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

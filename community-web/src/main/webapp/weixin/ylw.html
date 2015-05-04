@@ -1,0 +1,89 @@
+<!DOCTYPE>
+<html>
+	<head>
+		<title>亚龙湾国家旅游度假区</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href="../css/mobile/common.css" rel="stylesheet" type="text/css"/>
+		<link href="../css/mobile/index.css" rel="stylesheet" type="text/css"/>
+		<script type="text/javascript" src="js/jquery-1.8.0.min.js"></script>
+		<script type="text/javascript" src="js/jquery.event.drag-1.5.min.js"></script>
+		<script type="text/javascript" src="js/jquery.touchSlider.js"></script>
+		<script type="text/javascript">
+			$(function(){
+				var counter=0;
+				var timer=setInterval(function(){
+					$(".banner_yd li").eq((counter%6)).click();
+					counter=(counter%6)+1;
+				},5000);
+				$(".raiders_banner").hover(function(){
+					clearInterval(timer);
+				},function(){
+					timer=setInterval(function(){
+						$(".banner_yd li").eq((counter%6)).click();
+						counter=(counter%6)+1;
+					},5000);
+				});
+				$(".banner_yd li").each(function(){
+					$(this).click(function(){
+						counter=$(this).index();
+					});
+				});
+				$("div .main_image").touchSlider({
+					flexible:true,
+					speed:200,
+					delay:5000,
+					mouseTouch:true,
+					autoplay:true,
+        			autoplay: true,
+        			paging : $(".banner_yd li"),
+        			counter : function (e){
+        				$(".banner_yd li").removeClass("on").eq(e.current-1).addClass("on");
+        				counter=e.current-1;
+        			}
+				});
+				var banner_yd=$("div.banner_yd");
+				banner_yd.css("left",(($("div.raiders_main").width()-banner_yd.width())/2)+"px");
+			});
+		</script>
+	</head>
+<body>
+	<div class="gridContainer">
+		<div id="LayoutDiv1">
+			<div class="autoHeight">
+				<div class="raiders_main">
+					<div class="raiders_banner">
+						<div class="main_image">
+							<ul>
+								<li><img style="width:100%;height:100%;" src="images/ylw/banner1.jpg"/></li>
+								<li><img style="width:100%;height:100%;" src="images/ylw/banner2.jpg"/></li>
+								<li><img style="width:100%;height:100%;" src="images/ylw/banner3.jpg"/></li>
+							</ul>
+						</div>
+						<div class="banner_yd">
+	                        <ul>
+	                        	<li class="on">&nbsp;</li>
+	                            <li>&nbsp;</li>
+	                            <li>&nbsp;</li>
+	                        </ul>
+	                    </div>
+	                </div>
+					<div class="raiders_introduction">
+						亚龙湾国家旅游度假区位于三亚市东南28公里处，是海南最南端的一个半月形海湾。
+						享有“天下第一湾”美誉。 属典型的热带海洋性气候，全年平均气温25.5度，绵软细腻的沙滩绵延伸展约8公里，海滩长度约是美国夏威夷的3倍。
+						 亚龙湾集中了现代旅游五大要素：海洋、沙滩、阳光、绿色、新鲜空气于一体，适宜四季游泳和开展各类海上运动。
+						 海底世界资源丰富，有珊瑚礁、各种热带鱼、名贵贝类等。 这里海湾面积达66平方公里，可同时容纳十万人嬉水畅游，数千只游艇游弋追逐。
+						 这里的海水清澈见底，可以清晰地看见10米以下的海底景观。这里8公里长的海滩宽阔平缓，沙粒洁白细腻，自然资源国内绝无仅有，可与国际上任何著名的热带滨海旅游度假胜地相媲美。
+						<br />景点类型：海滩、度假
+						<br />最佳季节：9月-次年4月是亚龙湾旅游最佳时间，三亚的秋冬季温暖舒适，冬季更是避寒度假的首选之地。 
+								亚龙湾年平均气温25.5摄氏度，海水温度22-25.1摄氏度，全年都可游泳，被誉为“天下第一湾”，适宜四季游泳和开展各类海上运动。
+								因此，你既可以选择去深蓝清澈的海底潜水，也可以选择躺在遮阳伞下吃着热带水果，享受南国风情的浪漫。
+						<br />门票：联票（中心广场+蝴蝶谷）门票价格54，1.3米以下儿童免费，学生证半票，70岁以上老人，军人凭证免票，教师证半票，本地居民身份证半票。
+						<br />著名景点：天下第一湾、热带森林公园（电影非诚勿扰拍摄地，过江龙索桥，人间天堂鸟巢度假村）、海底世界、贝壳馆等
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

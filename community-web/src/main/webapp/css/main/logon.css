@@ -1,0 +1,58 @@
+body,div,form{margin:0;padding:0;}
+body{font-size:13px; word-wrap:break-word; word-break:break-all; font-family: "Century Gothic","Microsoft yahei";}
+html {_background-image:url(about:blank);_background-attachment:fixed;}
+html,body{ width:100%;}
+a{text-decoration:none;color:#777777; outline:none;}
+a:hover{ color:#2a57a4;}
+
+.fl{float:left}
+.fr{float:right}
+
+
+.home_content{ width:100%; height:635px; background:url(../../images/main/logon_bg.png) repeat-x;}
+.home_nr{ width:1000px; height:auto; margin:auto; overflow:auto;}
+.home_top{ width:1000px; height:75px;}
+.home_top_left{ width:227px; height:75px;}
+.home_top_tright{ width:132px; height:75px;}
+
+.logon_con{ width:999px; height:556px; margin-top:1px; background:url(../../images/main/banner_bg.png) no-repeat;}
+.logon_con_r{ width:600px; height:auto; margin-top:84px;}
+.logon_con_r_1{ 
+	width:550px; 
+	height:64px;
+	margin:0 auto;
+}
+.logon_con_r_1_an{ width:105px; margin-left:5px; height:64px;border-radius: 5px;}
+
+.logon_con_r_1_an img{
+	border-radius: 5px;
+	cursor:pointer;
+	width:105px;
+	height:64px;
+	border:0px;
+}
+.logon_con_r_1_an .hover{
+	width:104px;
+	height:63px;
+	cursor:pointer;
+	border-radius: 5px;
+	background: none repeat scroll 0 0 black;
+    border: 2px solid #ffde57;
+    box-shadow: 0 0 3px #ffde57;
+}
+.logon_con_r_2{ width:471px; height:260px; margin-top:55px; background:url(../../images/main/dl/sczx_dlbg.png) no-repeat; margin-right:60px;border-radius: 5px;}
+.logon_con_r_2_bt{ width:241px; height:41px; padding-left:110px; margin-top:10px;}
+.logon_con_r_2_con{ width:196px; height:138px; margin-top:47px; margin-left:171px;}
+.logon_con_r_2_srk{ width:193px; height:27px;}
+.logon_srk{ width:191px; height:27px; background:url(../../images/main/dl/dl_srk.png) no-repeat; border:0px; color:#fff; padding-left:2px;}
+.logon_con_r_2_srk1{ width:193px; height:27px; margin-top:13px;}
+.logon_con_r_2_dl{ width:120px; height:34px; margin-left:30px; margin-top:30px;}
+.logon_dlan{ width:120px; height:34px; line-height:34px; text-align:center; color:#ffd83c; background:#152542; border:0px; cursor:pointer;
+border-radius: 5px;
+font-family: microsoft yahei;
+font-size: 16px;
+font-weight: bold;
+}
+.home_foot{ width:100%; margin-top:20px; text-align:center; color:#646464;}
+
+
